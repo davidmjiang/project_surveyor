@@ -2,4 +2,8 @@
   <%= survey_fields.label :title %>
   <%= survey_fields.text_field :title %>
   <%= survey_fields.submit %>
+
+<%= render partial: "question", locals: {survey_fields: survey_fields}%>
+
 <% end %>
+

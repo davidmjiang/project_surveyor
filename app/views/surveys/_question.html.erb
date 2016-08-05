@@ -1,0 +1,12 @@
+<%= survey_fields.fields_for :questions do |question_fields| %>
+  <%= question_fields.label :name, "What is your question?" %>
+  <%= question_fields.text_field :name %>
+  <br>
+  <%= question_fields.label :min_value, "What is the Minimum Range Value?" %>
+  <%= question_fields.number_field :min_value, in: 1..10 %>
+  <%= question_fields.label :max_value, "What is the Maximum Range Value?" %>
+  <%= question_fields.number_field :max_value, in: 1..10 %>
+  <%= question_fields.label :required, "Is the question required?" %>
+  <%= question_fields.radio_button :required, 'Yes', :checked => true %>
+  <%= question_fields.radio_button :required, 'No'%>
+<% end %>
