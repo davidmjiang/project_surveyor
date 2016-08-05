@@ -13,6 +13,7 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(survey_params)
+    fail
     if @survey.save
       redirect_to @survey
     else
@@ -22,7 +23,7 @@ class SurveysController < ApplicationController
 
 private
 def survey_params
-  params.require(:survey).permit(:title)
+  params.require(:survey).permit(:title, questions_attributes: [:name, :body, :min_value, :max_value, :required])
 end
 
 end

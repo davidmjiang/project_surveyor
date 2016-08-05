@@ -4,9 +4,13 @@
   <br>
   <%= question_fields.label :min_value, "What is the Minimum Range Value?" %>
   <%= question_fields.number_field :min_value, in: 1..10 %>
+  <br>
   <%= question_fields.label :max_value, "What is the Maximum Range Value?" %>
   <%= question_fields.number_field :max_value, in: 1..10 %>
-  <%= question_fields.label :required, "Is the question required?" %>
+  <br>
+  <%= question_fields.label :required, "Yes, Required:" %>
   <%= question_fields.radio_button :required, 'Yes', :checked => true %>
+  <br>
+  <%= question_fields.label :required, "No, Not Required:" %>
   <%= question_fields.radio_button :required, 'No'%>
 <% end %>

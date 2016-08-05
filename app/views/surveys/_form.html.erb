@@ -1,9 +1,8 @@
 <%= form_for survey do |survey_fields| %>
   <%= survey_fields.label :title %>
   <%= survey_fields.text_field :title %>
-  <%= survey_fields.submit %>
-
-<%= render partial: "question", locals: {survey_fields: survey_fields}%>
-
+<br>
+<%= render partial: "question", locals: { survey: survey, survey_fields: survey_fields }%>
+<br>
+<%= survey_fields.submit class: "btn btn-primary"%>
 <% end %>
-
