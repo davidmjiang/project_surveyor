@@ -1,8 +1,10 @@
 <h1><%= @survey.title %></h1>
 
 <% @survey.num_questions.each do |question| %>
-  <%= question.name %>
-  <%= question.min_value %>
-  <%= question.max_value %>
-  <%= question.required %>
+<ul>
+  <li> Question name: <%= question.name %></li>
+  <li> Min value: <%= question.min_value %></li>
+  <li> Max value: <%= question.max_value %></li>
+  <li> Required? <%= question.required %></li>
+</ul>
 <% end %>

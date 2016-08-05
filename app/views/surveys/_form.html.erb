@@ -2,7 +2,17 @@
   <%= survey_fields.label :title %>
   <%= survey_fields.text_field :title %>
 <br>
-<%= render partial: "question", locals: { survey: survey, survey_fields: survey_fields }%>
-<br>
+
+<% if survey.persisted? %>
+ <%= survey_fields.fields_for :num_questions, survey.num_questions.build do |question_fields| %>
+    <%= render partial: "question", locals: { question_fields: question_fields}%>
+    <br>
+  <% end %>
+<% else %>
+  <%= survey_fields.fields_for :num_questions do |question_fields| %>
+  <%= render partial: "question", locals: { question_fields: question_fields}%>
+  <% end %>
+  <br>
+<% end %>
 <%= survey_fields.submit class: "btn btn-primary"%>
 <% end %>

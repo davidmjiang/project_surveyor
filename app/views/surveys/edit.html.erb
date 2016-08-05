@@ -1,0 +1,14 @@
+<h1> Adding more questions </h1>
+
+<%= render partial: "form", locals: { survey: @survey } %>
+
+<% @survey.num_questions.each do |question| %>
+<ul>
+  <% unless question.name.nil? %>
+    <li> Question name: <%= question.name %></li>
+    <li> Min value: <%= question.min_value %></li>
+    <li> Max value: <%= question.max_value %></li>
+    <li> Required? <%= question.required %></li>
+  <% end %>
+</ul>
+<% end %>

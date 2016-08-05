@@ -1,4 +1,4 @@
-<%= survey_fields.fields_for :questions do |question_fields| %>
+
   <%= question_fields.label :name, "What is your question?" %>
   <%= question_fields.text_field :name %>
   <br>
@@ -9,8 +9,8 @@
   <%= question_fields.number_field :max_value, in: 1..10 %>
   <br>
   <%= question_fields.label :required, "Yes, Required:" %>
-  <%= question_fields.radio_button :required, 'Yes', :checked => true %>
+  <%= question_fields.radio_button :required, true, :checked => true %>
   <br>
   <%= question_fields.label :required, "No, Not Required:" %>
-  <%= question_fields.radio_button :required, 'No'%>
-<% end %>
+  <%= question_fields.radio_button :required, false%>
+
